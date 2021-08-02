@@ -1,9 +1,12 @@
 import React from 'react';
+import HomeMain from './HomeMain/HomeMain';
+import Navbar from './Navbar/Navbar';
 
 const Home = () => {
     return (
-        <div>
-            <h2>This is home component</h2>
+        <div className='container'>
+            <Navbar/>
+            <HomeMain/>
         </div>
     );
 };
