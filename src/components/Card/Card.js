@@ -1,14 +1,19 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Card = (props) => {
+  const history = useHistory()
   const { title, taka } = props.card
+  const handleTicket =()=>{
+    history.push('./shipment')
+  }
   return (
     <div>
       <div>
         <div class="card m-1" style={{ width: '15rem' }}>
           <div class="card-body">
             <h5 class="card-title">{title}</h5>
-            <button type="button" class="btn btn-primary">BUY NOW</button>
+            <button onClick={handleTicket} type="button" class="btn btn-primary">BUY NOW</button>
             <p class="card-text">{taka}</p>
           </div>
         </div>
