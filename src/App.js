@@ -8,14 +8,16 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Home/Navbar/Navbar";
 import Login from "./components/LogIn/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import Shipment from "./components/Shipment/Shipment";
+import Map from "./components/Map/Map";
+import './App.css'
 
 export const UserContext = createContext()
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className='container'>
+    <div className='homemain'>
+      <div className='container'>
        <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Navbar></Navbar>
@@ -26,8 +28,8 @@ function App() {
           <Route path='/home'>
             <Home/>
           </Route>
-          <PrivateRoute path='/shipment'>
-            <Shipment/>
+          <PrivateRoute path='/map'>
+            <Map/>
           </PrivateRoute>
           <Route path='/login'>
             <Login/>
@@ -35,6 +37,7 @@ function App() {
         </Switch>
       </Router>
       </UserContext.Provider>
+    </div>
     </div>
   );
 }
